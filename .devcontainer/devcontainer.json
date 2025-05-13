@@ -1,7 +1,24 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:latest",
-  "extensions": [
-    "ms-vscode.vscode-linter",
-    "dbaeumer.vscode-eslint"
-  ]
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/node:^18": {},
+    "ghcr.io/devcontainers/features/python:^3.10": {
+      "installJupyter": "true"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "portsAttributes": {
+    "3000": {
+      "label": "UI Preview",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "curl -s https://api.ngrok.com/install | bash && echo 'export PATH=$PATH:$HOME/.ngrok2' >> ~/.bashrc && npm install"
 }
