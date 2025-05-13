@@ -1,0 +1,7 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:latest",
+  "extensions": [
+    "ms-vscode.vscode-linter",
+    "dbaeumer.vscode-eslint"
+  ]
+}
