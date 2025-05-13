@@ -5,3 +5,9 @@ tasks:
 ports:
   - port: 3000
     onOpen: open-browser
+
+  - name: "Run ngrok"
+    command: ngrok http 3000
+    ports:
+      - port: 4040
+        onOpen: notify
